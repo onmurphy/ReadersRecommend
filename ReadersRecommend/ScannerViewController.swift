@@ -18,22 +18,14 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     var captureDeviceOutput: AVCaptureMetadataOutput!
     var capturePreviewLayer: AVCaptureVideoPreviewLayer!
     var alertController: UIAlertController!
+    var frameView:UIView?
+
     
-    private var allowedTypes = [AVMetadataObjectTypeUPCECode,
-                                AVMetadataObjectTypeCode39Code,
-                                AVMetadataObjectTypeCode39Mod43Code,
-                                AVMetadataObjectTypeEAN13Code,
-                                AVMetadataObjectTypeEAN8Code,
-                                AVMetadataObjectTypeCode93Code,
-                                AVMetadataObjectTypeCode128Code,
-                                AVMetadataObjectTypePDF417Code,
-                                AVMetadataObjectTypeQRCode,
-                                AVMetadataObjectTypeAztecCode]
+    private var allowedTypes = [AVMetadataObjectTypeEAN13Code,
+                                AVMetadataObjectTypeEAN8Code]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //view.backgroundColor = UIColor.blackColor()
         
         captureSession = AVCaptureSession()
         
@@ -73,10 +65,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         capturePreviewLayer.frame = self.view.layer.bounds
         capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         self.view.layer.addSublayer(capturePreviewLayer)
-        
-        //captureSession.startRunning();
-        
-        //captureSession.startRunning();
     }
     
     func failed() {
@@ -113,14 +101,12 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         
         if metadataObjects != nil && metadataObjects.count > 0 {
             if let machineReadableCode = metadataObjects[0] as? AVMetadataMachineReadableCodeObject {
-                // get the barcode string
-                let type = machineReadableCode.type
+
                 let barcode = machineReadableCode.stringValue
                 
-                // display the barcode in an alert
-                let title = "Barcode"
-                let message = "Type: \(type)\nBarcode: \(barcode)"
-                displayAlert(title, message: message)
+                let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ResultsViewController") as! ResultsViewController
+                vc.barcode = barcode
+                self.navigationController!.pushViewController(vc, animated: true)
             }
         }
     }

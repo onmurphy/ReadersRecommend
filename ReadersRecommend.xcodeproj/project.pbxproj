@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480A1D8CACF5005BF834 /* GoogleClient.swift */; };
+		0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */; };
+		065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */; };
 		06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A01D8B939100B9D1FA /* AppDelegate.swift */; };
 		06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */; };
 		06BC79A61D8B939100B9D1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BC79A41D8B939100B9D1FA /* Main.storyboard */; };
@@ -14,6 +17,7 @@
 		06BC79AB1D8B939100B9D1FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BC79A91D8B939100B9D1FA /* LaunchScreen.storyboard */; };
 		06BC79B61D8B939100B9D1FA /* ReadersRecommendTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79B51D8B939100B9D1FA /* ReadersRecommendTests.swift */; };
 		06BC79C11D8B939100B9D1FA /* ReadersRecommendUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79C01D8B939100B9D1FA /* ReadersRecommendUITests.swift */; };
+		06BC79D41D8CA53900B9D1FA /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0652480A1D8CACF5005BF834 /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
+		0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
+		0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsWebViewController.swift; sourceTree = "<group>"; };
 		06BC799D1D8B939100B9D1FA /* ReadersRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadersRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BC79A01D8B939100B9D1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -47,6 +54,7 @@
 		06BC79BC1D8B939100B9D1FA /* ReadersRecommendUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ReadersRecommendUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BC79C01D8B939100B9D1FA /* ReadersRecommendUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadersRecommendUITests.swift; sourceTree = "<group>"; };
 		06BC79C21D8B939100B9D1FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +82,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		065248081D8CACCC005BF834 /* Clients */ = {
+			isa = PBXGroup;
+			children = (
+				065248091D8CACD4005BF834 /* Google */,
+			);
+			name = Clients;
+			sourceTree = "<group>";
+		};
+		065248091D8CACD4005BF834 /* Google */ = {
+			isa = PBXGroup;
+			children = (
+				0652480A1D8CACF5005BF834 /* GoogleClient.swift */,
+			);
+			name = Google;
+			sourceTree = "<group>";
+		};
 		06BC79941D8B939100B9D1FA = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +130,9 @@
 				06BC79A71D8B939100B9D1FA /* Assets.xcassets */,
 				06BC79A91D8B939100B9D1FA /* LaunchScreen.storyboard */,
 				06BC79AC1D8B939100B9D1FA /* Info.plist */,
+				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
+				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
+				0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */,
 			);
 			path = ReadersRecommend;
 			sourceTree = "<group>";
@@ -145,6 +172,7 @@
 		06BC79D01D8B93A500B9D1FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				065248081D8CACCC005BF834 /* Clients */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -282,7 +310,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */,
+				0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */,
 				06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */,
+				065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */,
+				06BC79D41D8CA53900B9D1FA /* ResultsViewController.swift in Sources */,
+				0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +547,7 @@
 				06BC79C71D8B939100B9D1FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06BC79C81D8B939100B9D1FA /* Build configuration list for PBXNativeTarget "ReadersRecommendTests" */ = {
 			isa = XCConfigurationList;
@@ -523,6 +556,7 @@
 				06BC79CA1D8B939100B9D1FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		06BC79CB1D8B939100B9D1FA /* Build configuration list for PBXNativeTarget "ReadersRecommendUITests" */ = {
 			isa = XCConfigurationList;
@@ -531,6 +565,7 @@
 				06BC79CD1D8B939100B9D1FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
