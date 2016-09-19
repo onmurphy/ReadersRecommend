@@ -12,24 +12,38 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+    let stack = CoreDataStack(modelName: "Model")!
+    
+    var sharedSession = NSURLSession.sharedSession()
+    
+    func applicationWillResignActive(application: UIApplication) {
+        do {
+            try stack.saveContext()
+        }
+        catch {
+            print ("Error saving context")
+        }
+    }
+    
+    func applicationDidEnterBackground(application: UIApplication) {
+        do {
+            try stack.saveContext()
+        }
+        catch {
+            print ("Error saving context")
+        }
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         UINavigationBar.appearance().barTintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
         UINavigationBar.appearance().tintColor = UIColor.whiteColor()
         UITabBar.appearance().barTintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
         UITabBar.appearance().tintColor = UIColor.whiteColor()
+        
+        stack.autoSave(60)
+        
         return true
-    }
-
-    func applicationWillResignActive(application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

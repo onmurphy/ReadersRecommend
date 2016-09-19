@@ -15,10 +15,15 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var coverActivity: UIActivityIndicatorView!
     @IBOutlet weak var checkReviewsButton: UIButton!
+    @IBOutlet weak var loveButton: UIButton!
     
     var barcode: String?
+    var stack: CoreDataStack!
     
     override func viewDidLoad() {
+        
+        let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        self.stack = delegate.stack
         
         self.coverActivity.startAnimating()
         self.checkReviewsButton.enabled = false
@@ -28,6 +33,7 @@ class ResultsViewController: UIViewController {
         self.checkReviewsButton.layer.shadowOffset = CGSizeMake(3, 3)
         self.checkReviewsButton.layer.shadowRadius = 3
         self.checkReviewsButton.layer.shadowOpacity = 0.5
+        self.view.bringSubviewToFront(loveButton)
         
         GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
             print (result)
@@ -48,4 +54,10 @@ class ResultsViewController: UIViewController {
             }
         }
     }
+    
+    //do{
+    //try self.stack.context.save()
+    //}catch{
+    //fatalError("Error while saving main context: \(error)")
+    //}
 }

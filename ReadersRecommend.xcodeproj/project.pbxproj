@@ -10,6 +10,12 @@
 		0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480A1D8CACF5005BF834 /* GoogleClient.swift */; };
 		0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */; };
 		065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */; };
+		065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248111D8F692F005BF834 /* CustomTableViewCell.swift */; };
+		065248141D8F7AD1005BF834 /* LoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248131D8F7AD1005BF834 /* LoveViewController.swift */; };
+		065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065248161D8F88AF005BF834 /* Model.xcdatamodeld */; };
+		0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */; };
+		0652481C1D8F8B07005BF834 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481A1D8F8B07005BF834 /* Book.swift */; };
+		0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481D1D8F8B34005BF834 /* CoreDataStack.swift */; };
 		06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A01D8B939100B9D1FA /* AppDelegate.swift */; };
 		06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */; };
 		06BC79A61D8B939100B9D1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BC79A41D8B939100B9D1FA /* Main.storyboard */; };
@@ -41,6 +47,12 @@
 		0652480A1D8CACF5005BF834 /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 		0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
 		0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsWebViewController.swift; sourceTree = "<group>"; };
+		065248111D8F692F005BF834 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		065248131D8F7AD1005BF834 /* LoveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveViewController.swift; sourceTree = "<group>"; };
+		065248171D8F88AF005BF834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataProperties.swift"; path = "../Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0652481A1D8F8B07005BF834 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = ../Book.swift; sourceTree = "<group>"; };
+		0652481D1D8F8B34005BF834 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		06BC799D1D8B939100B9D1FA /* ReadersRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadersRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BC79A01D8B939100B9D1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +110,17 @@
 			name = Google;
 			sourceTree = "<group>";
 		};
+		065248151D8F827A005BF834 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				06BC79A41D8B939100B9D1FA /* Main.storyboard */,
+				06BC79A91D8B939100B9D1FA /* LaunchScreen.storyboard */,
+				06BC79AC1D8B939100B9D1FA /* Info.plist */,
+				06BC79A71D8B939100B9D1FA /* Assets.xcassets */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
 		06BC79941D8B939100B9D1FA = {
 			isa = PBXGroup;
 			children = (
@@ -121,18 +144,11 @@
 		06BC799F1D8B939100B9D1FA /* ReadersRecommend */ = {
 			isa = PBXGroup;
 			children = (
+				06BC79A01D8B939100B9D1FA /* AppDelegate.swift */,
 				06BC79D01D8B93A500B9D1FA /* Model */,
 				06BC79CF1D8B93A200B9D1FA /* View */,
 				06BC79CE1D8B939E00B9D1FA /* Controller */,
-				06BC79A01D8B939100B9D1FA /* AppDelegate.swift */,
-				06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */,
-				06BC79A41D8B939100B9D1FA /* Main.storyboard */,
-				06BC79A71D8B939100B9D1FA /* Assets.xcassets */,
-				06BC79A91D8B939100B9D1FA /* LaunchScreen.storyboard */,
-				06BC79AC1D8B939100B9D1FA /* Info.plist */,
-				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
-				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
-				0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */,
+				065248151D8F827A005BF834 /* Assets */,
 			);
 			path = ReadersRecommend;
 			sourceTree = "<group>";
@@ -158,6 +174,11 @@
 		06BC79CE1D8B939E00B9D1FA /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */,
+				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
+				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
+				0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */,
+				065248131D8F7AD1005BF834 /* LoveViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -165,6 +186,7 @@
 		06BC79CF1D8B93A200B9D1FA /* View */ = {
 			isa = PBXGroup;
 			children = (
+				065248111D8F692F005BF834 /* CustomTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -172,6 +194,10 @@
 		06BC79D01D8B93A500B9D1FA /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0652481D1D8F8B34005BF834 /* CoreDataStack.swift */,
+				065248161D8F88AF005BF834 /* Model.xcdatamodeld */,
+				065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */,
+				0652481A1D8F8B07005BF834 /* Book.swift */,
 				065248081D8CACCC005BF834 /* Clients */,
 			);
 			name = Model;
@@ -309,11 +335,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				065248141D8F7AD1005BF834 /* LoveViewController.swift in Sources */,
 				06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */,
 				0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */,
+				0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */,
+				0652481C1D8F8B07005BF834 /* Book.swift in Sources */,
 				06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */,
+				065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */,
+				065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */,
 				065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */,
 				06BC79D41D8CA53900B9D1FA /* ResultsViewController.swift in Sources */,
+				0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */,
 				0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +600,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		065248161D8F88AF005BF834 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				065248171D8F88AF005BF834 /* Model.xcdatamodel */,
+			);
+			currentVersion = 065248171D8F88AF005BF834 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 06BC79951D8B939100B9D1FA /* Project object */;
 }
