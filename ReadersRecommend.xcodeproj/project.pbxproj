@@ -11,11 +11,12 @@
 		0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */; };
 		065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */; };
 		065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248111D8F692F005BF834 /* CustomTableViewCell.swift */; };
-		065248141D8F7AD1005BF834 /* LoveViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248131D8F7AD1005BF834 /* LoveViewController.swift */; };
+		065248141D8F7AD1005BF834 /* LoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248131D8F7AD1005BF834 /* LoveTableViewController.swift */; };
 		065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065248161D8F88AF005BF834 /* Model.xcdatamodeld */; };
 		0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */; };
 		0652481C1D8F8B07005BF834 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481A1D8F8B07005BF834 /* Book.swift */; };
 		0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481D1D8F8B34005BF834 /* CoreDataStack.swift */; };
+		065248201D91F58A005BF834 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481F1D91F58A005BF834 /* LaunchViewController.swift */; };
 		06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A01D8B939100B9D1FA /* AppDelegate.swift */; };
 		06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */; };
 		06BC79A61D8B939100B9D1FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06BC79A41D8B939100B9D1FA /* Main.storyboard */; };
@@ -48,11 +49,12 @@
 		0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
 		0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsWebViewController.swift; sourceTree = "<group>"; };
 		065248111D8F692F005BF834 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
-		065248131D8F7AD1005BF834 /* LoveViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveViewController.swift; sourceTree = "<group>"; };
+		065248131D8F7AD1005BF834 /* LoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveTableViewController.swift; sourceTree = "<group>"; };
 		065248171D8F88AF005BF834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataProperties.swift"; path = "../Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0652481A1D8F8B07005BF834 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = ../Book.swift; sourceTree = "<group>"; };
 		0652481D1D8F8B34005BF834 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0652481F1D91F58A005BF834 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		06BC799D1D8B939100B9D1FA /* ReadersRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadersRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06BC79A01D8B939100B9D1FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
@@ -178,7 +180,8 @@
 				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
 				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
 				0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */,
-				065248131D8F7AD1005BF834 /* LoveViewController.swift */,
+				065248131D8F7AD1005BF834 /* LoveTableViewController.swift */,
+				0652481F1D91F58A005BF834 /* LaunchViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -335,7 +338,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065248141D8F7AD1005BF834 /* LoveViewController.swift in Sources */,
+				065248201D91F58A005BF834 /* LaunchViewController.swift in Sources */,
+				065248141D8F7AD1005BF834 /* LoveTableViewController.swift in Sources */,
 				06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */,
 				0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */,
 				0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */,

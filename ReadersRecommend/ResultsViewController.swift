@@ -19,11 +19,16 @@ class ResultsViewController: UIViewController {
     
     var barcode: String?
     var stack: CoreDataStack!
+    var data: NSData!
     
     override func viewDidLoad() {
         
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
+        
+        var tap = UITapGestureRecognizer(target: self, action: #selector(ResultsViewController.loveBook))
+        cover.addGestureRecognizer(tap)
+        cover.userInteractionEnabled = true
         
         self.coverActivity.startAnimating()
         self.checkReviewsButton.enabled = false
@@ -44,8 +49,8 @@ class ResultsViewController: UIViewController {
                 self.authors.text = result![1] as? String
                 
                 let url = NSURL(string: result![2] as! String)
-                let data = NSData(contentsOfURL: url!)
-                self.cover.image = UIImage(data: data!)
+                self.data = NSData(contentsOfURL: url!)
+                self.cover.image = UIImage(data: self.data!)
                 
                 self.coverActivity.stopAnimating()
                 self.coverActivity.hidden = true
@@ -55,9 +60,13 @@ class ResultsViewController: UIViewController {
         }
     }
     
-    //do{
-    //try self.stack.context.save()
-    //}catch{
-    //fatalError("Error while saving main context: \(error)")
-    //}
+    @IBAction func loveBook() {
+        let book = Book(title: self.bookTitle.text!, isbn: self.barcode!, authors: self.authors.text!, image: self.data, context: self.stack.context)
+        print("added")
+        do{
+            try self.stack.context.save()
+        }catch{
+            fatalError("Error while saving main context: \(error)")
+        }
+    }
 }
