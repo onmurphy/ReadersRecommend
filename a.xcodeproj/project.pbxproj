@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480A1D8CACF5005BF834 /* GoogleClient.swift */; };
 		0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */; };
-		065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */; };
 		065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248111D8F692F005BF834 /* CustomTableViewCell.swift */; };
 		065248141D8F7AD1005BF834 /* LoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248131D8F7AD1005BF834 /* LoveTableViewController.swift */; };
 		065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065248161D8F88AF005BF834 /* Model.xcdatamodeld */; };
@@ -47,7 +46,6 @@
 /* Begin PBXFileReference section */
 		0652480A1D8CACF5005BF834 /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
 		0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
-		0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewsWebViewController.swift; sourceTree = "<group>"; };
 		065248111D8F692F005BF834 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		065248131D8F7AD1005BF834 /* LoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveTableViewController.swift; sourceTree = "<group>"; };
 		065248171D8F88AF005BF834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -179,7 +177,6 @@
 				06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */,
 				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
 				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
-				0652480F1D8E156D005BF834 /* ReviewsWebViewController.swift */,
 				065248131D8F7AD1005BF834 /* LoveTableViewController.swift */,
 				0652481F1D91F58A005BF834 /* LaunchViewController.swift */,
 			);
@@ -275,18 +272,21 @@
 					06BC799C1D8B939100B9D1FA = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = 4QSNEZYJQD;
+						LastSwiftMigration = 0800;
 					};
 					06BC79B01D8B939100B9D1FA = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 06BC799C1D8B939100B9D1FA;
 					};
 					06BC79BB1D8B939100B9D1FA = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = 06BC799C1D8B939100B9D1FA;
 					};
 				};
 			};
-			buildConfigurationList = 06BC79981D8B939100B9D1FA /* Build configuration list for PBXProject "ReadersRecommend" */;
+			buildConfigurationList = 06BC79981D8B939100B9D1FA /* Build configuration list for PBXProject "a" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -347,7 +347,6 @@
 				06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */,
 				065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */,
 				065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */,
-				065248101D8E156D005BF834 /* ReviewsWebViewController.swift in Sources */,
 				06BC79D41D8CA53900B9D1FA /* ResultsViewController.swift in Sources */,
 				0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */,
 				0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */,
@@ -496,11 +495,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4QSNEZYJQD;
 				INFOPLIST_FILE = ReadersRecommend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -510,11 +511,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = 4QSNEZYJQD;
 				INFOPLIST_FILE = ReadersRecommend/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommend;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -526,6 +529,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommendTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadersRecommend.app/ReadersRecommend";
 			};
 			name = Debug;
@@ -538,6 +542,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommendTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReadersRecommend.app/ReadersRecommend";
 			};
 			name = Release;
@@ -549,6 +554,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommendUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = ReadersRecommend;
 			};
 			name = Debug;
@@ -560,6 +566,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Murphy.ReadersRecommendUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
 				TEST_TARGET_NAME = ReadersRecommend;
 			};
 			name = Release;
@@ -567,7 +574,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		06BC79981D8B939100B9D1FA /* Build configuration list for PBXProject "ReadersRecommend" */ = {
+		06BC79981D8B939100B9D1FA /* Build configuration list for PBXProject "a" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				06BC79C31D8B939100B9D1FA /* Debug */,

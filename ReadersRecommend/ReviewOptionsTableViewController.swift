@@ -8,10 +8,15 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 class ReviewOptionsTableViewController: UITableViewController {
     
-    let categories = ["Goodreads", "Amazon", "iDreamBooks"]
+    let categories = ["Goodreads", "iDreamBooks"]
+    
+    var url : String!
+    
+    var barcode: String!
     
     override func viewDidLoad() {
         
@@ -28,7 +33,7 @@ class ReviewOptionsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
-        return tableView.frame.size.height / 3
+        return tableView.frame.size.height / 2
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -36,15 +41,12 @@ class ReviewOptionsTableViewController: UITableViewController {
         
         if indexPath.item == 0 {
             cell.imageView?.image = UIImage(named: "goodreads")
-        }
-        
-        if indexPath.item == 1 {
-            cell.imageView?.image = UIImage(named: "amazon")
             cell.backgroundColor = UIColor.whiteColor()
         }
         
-        if indexPath.item == 2 {
+        if indexPath.item == 1 {
             cell.imageView?.image = UIImage(named: "idreambooks")
+            cell.backgroundColor = UIColor.whiteColor()
         }
 
         return cell
@@ -52,9 +54,22 @@ class ReviewOptionsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         print(categories[indexPath.item])
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewsWebViewController") as! ReviewsWebViewController
-
-        self.navigationController!.pushViewController(vc, animated: true)
+        
+        if indexPath.item == 0 {
+            self.url = "https://www.goodreads.com/api/reviews_widget_iframe?did=u1n5vmgviDEWGU4aa5nu6Q&amp;format=html&amp;isbn=" + self.barcode + "&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000"
+        }
+        
+        if indexPath.item == 1 {
+            self.url = "https://idreambooks.com/api/books/reviews_widget.js?api_key=66b544b1a6c4ec96c5a80aaa63c93b4c2b0b76c7&isbn=" + self.barcode
+            print(self.url)
+        }
+        let svc = SFSafariViewController(URL: NSURL(string: self.url)!)
+        if #available(iOS 10.0, *) {
+            svc.preferredBarTintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        } else {
+            svc.view.tintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
+        }
+        self.presentViewController(svc, animated: true, completion: nil)
         
     }
     

@@ -26,7 +26,7 @@ class ResultsViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
         
-        var tap = UITapGestureRecognizer(target: self, action: #selector(ResultsViewController.loveBook))
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ResultsViewController.loveBook))
         cover.addGestureRecognizer(tap)
         cover.userInteractionEnabled = true
         
@@ -68,5 +68,11 @@ class ResultsViewController: UIViewController {
         }catch{
             fatalError("Error while saving main context: \(error)")
         }
+    }
+    
+    @IBAction func checkReviewsClicked() {
+        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewOptionsTableViewController") as! ReviewOptionsTableViewController
+        vc.barcode = self.barcode
+        self.navigationController!.pushViewController(vc, animated: true)
     }
 }

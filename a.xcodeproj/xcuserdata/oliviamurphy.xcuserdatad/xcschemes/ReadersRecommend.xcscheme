@@ -17,7 +17,7 @@
                BlueprintIdentifier = "06BC799C1D8B939100B9D1FA"
                BuildableName = "ReadersRecommend.app"
                BlueprintName = "ReadersRecommend"
-               ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+               ReferencedContainer = "container:a.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "06BC79B01D8B939100B9D1FA"
                BuildableName = "ReadersRecommendTests.xctest"
                BlueprintName = "ReadersRecommendTests"
-               ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+               ReferencedContainer = "container:a.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -45,7 +45,7 @@
                BlueprintIdentifier = "06BC79BB1D8B939100B9D1FA"
                BuildableName = "ReadersRecommendUITests.xctest"
                BlueprintName = "ReadersRecommendUITests"
-               ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+               ReferencedContainer = "container:a.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -55,7 +55,7 @@
             BlueprintIdentifier = "06BC799C1D8B939100B9D1FA"
             BuildableName = "ReadersRecommend.app"
             BlueprintName = "ReadersRecommend"
-            ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+            ReferencedContainer = "container:a.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -78,7 +78,7 @@
             BlueprintIdentifier = "06BC799C1D8B939100B9D1FA"
             BuildableName = "ReadersRecommend.app"
             BlueprintName = "ReadersRecommend"
-            ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+            ReferencedContainer = "container:a.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -97,7 +97,7 @@
             BlueprintIdentifier = "06BC799C1D8B939100B9D1FA"
             BuildableName = "ReadersRecommend.app"
             BlueprintName = "ReadersRecommend"
-            ReferencedContainer = "container:ReadersRecommend.xcodeproj">
+            ReferencedContainer = "container:a.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
