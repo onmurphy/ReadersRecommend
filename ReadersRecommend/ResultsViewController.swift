@@ -15,7 +15,8 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var cover: UIImageView!
     @IBOutlet weak var coverActivity: UIActivityIndicatorView!
     @IBOutlet weak var checkReviewsButton: UIButton!
-    @IBOutlet weak var loveButton: UIButton!
+    @IBOutlet weak var addToListButton: UIButton!
+    @IBOutlet weak var recommendButton: UIButton!
     
     var barcode: String?
     var stack: CoreDataStack!
@@ -26,19 +27,36 @@ class ResultsViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
         
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ResultsViewController.loveBook))
-        cover.addGestureRecognizer(tap)
-        cover.userInteractionEnabled = true
-        
         self.coverActivity.startAnimating()
         self.checkReviewsButton.enabled = false
+        self.addToListButton.enabled = false
+        self.recommendButton.enabled = false
+        
+        self.cover.layer.shadowColor = UIColor.blackColor().CGColor
+        self.cover.layer.shadowOffset = CGSizeMake(3, 3)
+        self.cover.layer.shadowRadius = 6
+        self.cover.layer.shadowOpacity = 0.5
+        
+        self.checkReviewsButton.layer.cornerRadius = 5
         self.checkReviewsButton.alpha = 0.5
-        self.checkReviewsButton.layer.cornerRadius = 6
         self.checkReviewsButton.layer.shadowColor = UIColor.blackColor().CGColor
         self.checkReviewsButton.layer.shadowOffset = CGSizeMake(3, 3)
         self.checkReviewsButton.layer.shadowRadius = 3
         self.checkReviewsButton.layer.shadowOpacity = 0.5
-        self.view.bringSubviewToFront(loveButton)
+        
+        self.addToListButton.layer.cornerRadius = 5
+        self.addToListButton.alpha = 0.5
+        self.addToListButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.addToListButton.layer.shadowOffset = CGSizeMake(3, 3)
+        self.addToListButton.layer.shadowRadius = 3
+        self.addToListButton.layer.shadowOpacity = 0.5
+        
+        self.recommendButton.layer.cornerRadius = 5
+        self.recommendButton.alpha = 0.5
+        self.recommendButton.layer.shadowColor = UIColor.blackColor().CGColor
+        self.recommendButton.layer.shadowOffset = CGSizeMake(3, 3)
+        self.recommendButton.layer.shadowRadius = 3
+        self.recommendButton.layer.shadowOpacity = 0.5
         
         GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
             print (result)
@@ -55,7 +73,11 @@ class ResultsViewController: UIViewController {
                 self.coverActivity.stopAnimating()
                 self.coverActivity.hidden = true
                 self.checkReviewsButton.enabled = true
+                self.addToListButton.enabled = true
+                self.recommendButton.enabled = true
                 self.checkReviewsButton.alpha = 1.0
+                self.addToListButton.alpha = 1.0
+                self.recommendButton.alpha = 1.0
             }
         }
     }

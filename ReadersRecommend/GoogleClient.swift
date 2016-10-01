@@ -42,7 +42,7 @@ class GoogleClient {
             
             let authors = volumeInfo["authors"] as! NSArray
             
-            var authorString = ""
+            var authorString = "by: "
             for author in authors {
                 authorString += (author as! String) + "\n"
             }
