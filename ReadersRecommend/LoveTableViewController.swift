@@ -25,6 +25,8 @@ class LoveTableViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         
+        tabBarController?.tabBar.items?.last?.badgeValue = nil
+        
         books.removeAll()
         
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -68,6 +70,7 @@ class LoveTableViewController: UITableViewController {
         //print(categories[indexPath.item])
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ResultsViewController") as! ResultsViewController
         vc.barcode = books[indexPath.item].isbn
+        vc.book = books[indexPath.item]
         self.navigationController!.pushViewController(vc, animated: true)
         
     }

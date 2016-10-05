@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import CoreData
 
 class ResultsViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
@@ -21,16 +22,12 @@ class ResultsViewController: UIViewController {
     var barcode: String?
     var stack: CoreDataStack!
     var data: NSData!
+    var book: Book!
     
     override func viewDidLoad() {
         
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
-        
-        self.coverActivity.startAnimating()
-        self.checkReviewsButton.enabled = false
-        self.addToListButton.enabled = false
-        self.recommendButton.enabled = false
         
         self.cover.layer.shadowColor = UIColor.blackColor().CGColor
         self.cover.layer.shadowOffset = CGSizeMake(3, 3)
@@ -58,37 +55,100 @@ class ResultsViewController: UIViewController {
         self.recommendButton.layer.shadowRadius = 3
         self.recommendButton.layer.shadowOpacity = 0.5
         
-        GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
-            print (result)
-            
-            dispatch_async(dispatch_get_main_queue()) {
-                
-                self.bookTitle.text = result![0] as? String
-                self.authors.text = result![1] as? String
-                
-                let url = NSURL(string: result![2] as! String)
-                self.data = NSData(contentsOfURL: url!)
-                self.cover.image = UIImage(data: self.data!)
-                
-                self.coverActivity.stopAnimating()
-                self.coverActivity.hidden = true
-                self.checkReviewsButton.enabled = true
-                self.addToListButton.enabled = true
-                self.recommendButton.enabled = true
-                self.checkReviewsButton.alpha = 1.0
-                self.addToListButton.alpha = 1.0
-                self.recommendButton.alpha = 1.0
+        self.coverActivity.startAnimating()
+        self.checkReviewsButton.enabled = false
+        self.addToListButton.enabled = false
+        self.recommendButton.enabled = false
+        
+        if book != nil {
+            self.addToListButton.setTitle("Remove from Must Read List", forState: .Normal)
+            self.bookTitle.text = book.title
+            self.authors.text = book.authors
+            self.cover.image = UIImage(data: book.image!)
+            self.data = book.image!
+            self.barcode = book.isbn
+        } else {
+            GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
+                if error == nil {
+                    dispatch_async(dispatch_get_main_queue()) {
+                        
+                        self.bookTitle.text = result![0] as? String
+                        self.authors.text = result![1] as? String
+                        
+                        let url = NSURL(string: result![2] as! String)
+                        self.data = NSData(contentsOfURL: url!)
+                        self.cover.image = UIImage(data: self.data!)
+                    }
+                }
+                else {
+                    let alertController = UIAlertController(title: "Default Style", message: "Could not retrieve book info. Please check network connection, or try another book", preferredStyle: .Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
         }
+        self.coverActivity.stopAnimating()
+        self.coverActivity.hidden = true
+        self.checkReviewsButton.enabled = true
+        self.addToListButton.enabled = true
+        self.recommendButton.enabled = true
+        self.checkReviewsButton.alpha = 1.0
+        self.addToListButton.alpha = 1.0
+        self.recommendButton.alpha = 1.0
     }
     
     @IBAction func loveBook() {
-        let book = Book(title: self.bookTitle.text!, isbn: self.barcode!, authors: self.authors.text!, image: self.data, context: self.stack.context)
-        print("added")
-        do{
-            try self.stack.context.save()
-        }catch{
-            fatalError("Error while saving main context: \(error)")
+        if self.addToListButton.currentTitle == "Add to Must Read List" {
+
+            let fetchRequest = NSFetchRequest(entityName: "Book")
+            
+            let predicate = NSPredicate(format: "isbn == " + self.barcode!)
+            fetchRequest.predicate = predicate
+            
+            do {
+                let fetchResults = try self.stack.context.executeFetchRequest(fetchRequest) as? [Book]
+                
+                if fetchResults!.count > 0 {
+                } else {
+                    let book = Book(title: self.bookTitle.text!, isbn: self.barcode!, authors: self.authors.text!, image: self.data!, context: self.stack.context)
+                    
+                    print("added")
+                    do{
+                        try self.stack.context.save()
+                    }catch{
+                        fatalError("Error while saving main context: \(error)")
+                    }
+                }
+            } catch {
+                fatalError("Error while saving main context: \(error)")
+            }
+            
+            if let badgeValue = tabBarController?.tabBar.items?.last?.badgeValue,
+                nextValue = Int(badgeValue)?.successor() {
+                tabBarController?.tabBar.items?.last?.badgeValue = String(nextValue)
+            } else {
+                tabBarController?.tabBar.items?.last?.badgeValue = "1"
+            }
+            
+            self.addToListButton.setTitle("Remove from Must Read List", forState: .Normal)
+            
+        } else if self.addToListButton.currentTitle == "Remove from Must Read List" {
+            self.stack.context.deleteObject(book)
+            
+            print ("deleted")
+            self.addToListButton.setTitle("Add to Must Read List", forState: .Normal)
+            
+            if let badgeValue = tabBarController?.tabBar.items?.last?.badgeValue {
+                let nextValue = Int(badgeValue)! - 1
+                
+                tabBarController?.tabBar.items?.last?.badgeValue = String(nextValue)
+                
+                if nextValue == 0 {
+                    tabBarController?.tabBar.items?.last?.badgeValue = nil
+                }
+            }
         }
     }
     
@@ -96,5 +156,16 @@ class ResultsViewController: UIViewController {
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewOptionsTableViewController") as! ReviewOptionsTableViewController
         vc.barcode = self.barcode
         self.navigationController!.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func shareBook() {
+        var shareContent = [AnyObject]()
+        
+        shareContent.append("You have to read this book! \n\n" + self.bookTitle.text! + ", " + self.authors.text!)
+        shareContent.append(self.cover.image!)
+    
+        let activityViewController = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
+        activityViewController.excludedActivityTypes = [UIActivityTypePostToTwitter, UIActivityTypeAssignToContact, UIActivityTypeOpenInIBooks, UIActivityTypeSaveToCameraRoll, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint]
+        presentViewController(activityViewController, animated: true, completion: {})
     }
 }
