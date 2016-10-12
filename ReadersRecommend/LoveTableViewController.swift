@@ -20,12 +20,13 @@ class LoveTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         
-        self.navigationItem.title = "Must Reads!"
+        let image = UIImage(named: "logo")
+        navigationItem.titleView = UIImageView(image: image)
     }
     
     override func viewWillAppear(animated: Bool) {
         
-        tabBarController?.tabBar.items?.last?.badgeValue = nil
+        tabBarController?.tabBar.items?.first?.badgeValue = nil
         
         books.removeAll()
         
@@ -62,6 +63,7 @@ class LoveTableViewController: UITableViewController {
         
         cell.imageView?.image = UIImage(data: books[indexPath.item].image!)
         cell.textLabel?.text = books[indexPath.item].title
+        cell.textLabel?.font = UIFont(name:"North", size:12)
         
         return cell
     }

@@ -27,6 +27,9 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        let image = UIImage(named: "logo")
+        navigationItem.titleView = UIImageView(image: image)
+        
         captureSession = AVCaptureSession()
         
         do {

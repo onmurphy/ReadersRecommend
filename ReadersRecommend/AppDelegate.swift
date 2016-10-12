@@ -36,10 +36,31 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        UINavigationBar.appearance().barTintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
-        UINavigationBar.appearance().tintColor = UIColor.whiteColor()
-        UITabBar.appearance().barTintColor = UIColor(red: 183.0/255.0, green: 206.0/255.0, blue: 99.0/255.0, alpha: 1.0)
-        UITabBar.appearance().tintColor = UIColor.whiteColor()
+        UINavigationBar.appearance().barTintColor = UIColor(red: 49.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = UIColor(red: 244.0/255.0, green: 241.0/255.0, blue: 231.0/255.0, alpha: 1.0)
+
+        UITabBar.appearance().barTintColor = UIColor(red: 49.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+        UITabBar.appearance().tintColor = UIColor(red: 244.0/255.0, green: 241.0/255.0, blue: 231.0/255.0, alpha: 1.0)
+        
+        let colorNormal : UIColor = UIColor(red: 244.0/255.0, green: 241.0/255.0, blue: 231.0/255.0, alpha: 1.0)
+        let colorSelected : UIColor = UIColor(red: 45.0/255.0, green: 181.0/255.0, blue: 158.0/255.0, alpha: 1.0)
+
+        let titleFontAll : UIFont = UIFont(name: "North", size: 8.0)!
+        
+        let attributesNormal = [
+            NSForegroundColorAttributeName : colorNormal,
+            NSFontAttributeName : titleFontAll
+        ]
+        
+        let attributesSelected = [
+            NSForegroundColorAttributeName : colorSelected,
+            NSFontAttributeName : titleFontAll
+        ]
+        
+        UIBarButtonItem.appearance().setTitleTextAttributes(attributesNormal, forState: .Normal)
+        
+        UITabBarItem.appearance().setTitleTextAttributes(attributesNormal, forState: .Normal)
+        UITabBarItem.appearance().setTitleTextAttributes(attributesSelected, forState: .Selected)
         
         stack.autoSave(60)
         

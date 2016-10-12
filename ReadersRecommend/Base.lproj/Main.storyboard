@@ -6,6 +6,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="North.otf">
+            <string>North-Regular</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Love Table View Controller-->
         <scene sceneID="Fvh-KJ-tSO">
@@ -14,7 +19,8 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="8mO-bD-oCI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="sectionIndexColor" red="0.19215686274509802" green="0.18823529411764706" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="cell" id="CGO-1I-f4U">
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
@@ -23,6 +29,7 @@
                                     <frame key="frameInset" width="342" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
+                                <color key="backgroundColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -36,11 +43,11 @@
             </objects>
             <point key="canvasLocation" x="1384" y="784"/>
         </scene>
-        <!--Love-->
+        <!--Must Read-->
         <scene sceneID="Knp-pR-eWx">
             <objects>
                 <navigationController id="lhY-ZM-sxO" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Love" image="heart" id="UCv-io-VWB"/>
+                    <tabBarItem key="tabBarItem" title="Must Read" image="heart" id="UCv-io-VWB"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ucL-BZ-lsU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -71,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDI-es-ooU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="-2"/>
+            <point key="canvasLocation" x="1383.2" y="-2.2488755622188905"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="GcG-vl-5Rm">
@@ -85,7 +92,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-iO-kEd">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" directionalLockEnabled="YES" bounces="NO" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pSD-iO-kEd">
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cbf-xQ-NcG">
                                         <subviews>
@@ -97,7 +104,7 @@
                                             </imageView>
                                             <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="eXr-Ol-bha"/>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="0.95686274509803915" green="0.94509803921568625" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="WMz-js-f7D" firstAttribute="centerY" secondItem="eXr-Ol-bha" secondAttribute="centerY" id="2yG-C9-6cP"/>
                                             <constraint firstItem="WMz-js-f7D" firstAttribute="centerX" secondItem="Cbf-xQ-NcG" secondAttribute="centerX" id="EAR-XA-QdA"/>
@@ -111,13 +118,14 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="122" id="cBD-BF-zja"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
-                                        <color key="textColor" red="0.0039215686269999999" green="0.086274509799999996" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="North-Regular" family="North" pointSize="17"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9S3-be-DAN">
-                                        <color key="backgroundColor" red="0.77647058820000003" green="0.7843137255" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-                                        <state key="normal" title="Read Reviews">
+                                        <color key="backgroundColor" red="0.98039215686274506" green="0.77647058823529413" blue="0.41568627450980389" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="North-Regular" family="North" pointSize="13"/>
+                                        <state key="normal" title="Read GoodReads Reviews">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
@@ -125,7 +133,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h0I-N7-Wg7">
-                                        <color key="backgroundColor" red="0.77647058820000003" green="0.7843137255" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="North-Regular" family="North" pointSize="13"/>
                                         <state key="normal" title="Add to Must Read List">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -134,7 +143,8 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ela-6d-kgu">
-                                        <color key="backgroundColor" red="0.77647058820000003" green="0.7843137255" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.98039215690000003" green="0.77647058820000003" blue="0.41568627450000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" name="North-Regular" family="North" pointSize="13"/>
                                         <state key="normal" title="Recommend to a Friend">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -146,11 +156,12 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="100" id="HYO-X1-BIT"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="North-Regular" family="North" pointSize="14"/>
+                                        <color key="textColor" red="0.95686274510000002" green="0.94509803920000002" blue="0.90588235289999997" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
+                                <color key="backgroundColor" red="0.1764705882352941" green="0.70980392156862748" blue="0.61960784313725492" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="Cbf-xQ-NcG" firstAttribute="leading" secondItem="pSD-iO-kEd" secondAttribute="leading" id="0ix-kT-QJo"/>
                                     <constraint firstAttribute="bottom" secondItem="Ela-6d-kgu" secondAttribute="bottom" constant="8" id="1kA-Oc-6KO"/>
@@ -317,34 +328,6 @@
             </objects>
             <point key="canvasLocation" x="698" y="-2"/>
         </scene>
-        <!--Launch View Controller-->
-        <scene sceneID="CL7-f5-FdZ">
-            <objects>
-                <viewController id="SVV-6d-oxj" customClass="LaunchViewController" customModule="ReadersRecommend" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="nxY-H6-qck"/>
-                        <viewControllerLayoutGuide type="bottom" id="9jL-cI-7NZ"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="fzB-bw-Vka">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nRf-uW-Qj1">
-                                <frame key="frameInset" minX="203" minY="467" width="194" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start Scanning!"/>
-                            </button>
-                        </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                    <connections>
-                        <outlet property="startButton" destination="nRf-uW-Qj1" id="QQe-hp-PL3"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="S15-Sd-KRs" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-848" y="353"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="ktM-W6-UM7">
             <objects>
@@ -355,8 +338,8 @@
                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
-                        <segue destination="xhC-oe-jya" kind="relationship" relationship="viewControllers" id="suf-iL-fkH"/>
                         <segue destination="lhY-ZM-sxO" kind="relationship" relationship="viewControllers" id="3ny-OU-lIm"/>
+                        <segue destination="xhC-oe-jya" kind="relationship" relationship="viewControllers" id="suf-iL-fkH"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1Gr-CR-Kht" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -365,7 +348,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="heart" width="27" height="27"/>
+        <image name="heart" width="55" height="47"/>
         <image name="scan" width="25" height="24"/>
     </resources>
 </document>

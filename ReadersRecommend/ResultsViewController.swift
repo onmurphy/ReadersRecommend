@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import CoreData
+import SafariServices
 
 class ResultsViewController: UIViewController {
     @IBOutlet weak var bookTitle: UILabel!
@@ -29,10 +30,13 @@ class ResultsViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
         
+        let image = UIImage(named: "logo")
+        navigationItem.titleView = UIImageView(image: image)
+        
         self.cover.layer.shadowColor = UIColor.blackColor().CGColor
         self.cover.layer.shadowOffset = CGSizeMake(3, 3)
         self.cover.layer.shadowRadius = 6
-        self.cover.layer.shadowOpacity = 0.5
+        self.cover.layer.shadowOpacity = 0.8
         
         self.checkReviewsButton.layer.cornerRadius = 5
         self.checkReviewsButton.alpha = 0.5
@@ -125,11 +129,11 @@ class ResultsViewController: UIViewController {
                 fatalError("Error while saving main context: \(error)")
             }
             
-            if let badgeValue = tabBarController?.tabBar.items?.last?.badgeValue,
+            if let badgeValue = tabBarController?.tabBar.items?.first?.badgeValue,
                 nextValue = Int(badgeValue)?.successor() {
-                tabBarController?.tabBar.items?.last?.badgeValue = String(nextValue)
+                tabBarController?.tabBar.items?.first?.badgeValue = String(nextValue)
             } else {
-                tabBarController?.tabBar.items?.last?.badgeValue = "1"
+                tabBarController?.tabBar.items?.first?.badgeValue = "1"
             }
             
             self.addToListButton.setTitle("Remove from Must Read List", forState: .Normal)
@@ -140,22 +144,34 @@ class ResultsViewController: UIViewController {
             print ("deleted")
             self.addToListButton.setTitle("Add to Must Read List", forState: .Normal)
             
-            if let badgeValue = tabBarController?.tabBar.items?.last?.badgeValue {
+            if let badgeValue = tabBarController?.tabBar.items?.first?.badgeValue {
                 let nextValue = Int(badgeValue)! - 1
                 
-                tabBarController?.tabBar.items?.last?.badgeValue = String(nextValue)
+                tabBarController?.tabBar.items?.first?.badgeValue = String(nextValue)
                 
                 if nextValue == 0 {
-                    tabBarController?.tabBar.items?.last?.badgeValue = nil
+                    tabBarController?.tabBar.items?.first?.badgeValue = nil
                 }
             }
         }
     }
     
     @IBAction func checkReviewsClicked() {
-        let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewOptionsTableViewController") as! ReviewOptionsTableViewController
-        vc.barcode = self.barcode
-        self.navigationController!.pushViewController(vc, animated: true)
+        
+        let url = "https://www.goodreads.com/api/reviews_widget_iframe?did=u1n5vmgviDEWGU4aa5nu6Q&amp;format=html&amp;isbn=" + self.barcode! + "&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000"
+        
+        let svc = SFSafariViewController(URL: NSURL(string: url)!)
+        if #available(iOS 10.0, *) {
+            svc.preferredBarTintColor = UIColor(red: 49.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+        } else {
+            svc.view.tintColor = UIColor(red: 49.0/255.0, green: 48.0/255.0, blue: 86.0/255.0, alpha: 1.0)
+        }
+        
+        self.presentViewController(svc, animated: true, completion: nil)
+        //self.presentViewController(svc, animated: true, completion: nil)
+        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewOptionsTableViewController") as! ReviewOptionsTableViewController
+        //vc.barcode = self.barcode
+        //self.navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func shareBook() {
