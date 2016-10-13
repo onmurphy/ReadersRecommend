@@ -69,7 +69,6 @@ class LoveTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        //print(categories[indexPath.item])
         let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ResultsViewController") as! ResultsViewController
         vc.barcode = books[indexPath.item].isbn
         vc.book = books[indexPath.item]

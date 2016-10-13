@@ -30,6 +30,12 @@ class ResultsViewController: UIViewController {
         let delegate = UIApplication.sharedApplication().delegate as! AppDelegate
         self.stack = delegate.stack
         
+        self.coverActivity.hidden = false
+        self.coverActivity.startAnimating()
+        self.checkReviewsButton.enabled = false
+        self.addToListButton.enabled = false
+        self.recommendButton.enabled = false
+        
         let image = UIImage(named: "logo")
         navigationItem.titleView = UIImageView(image: image)
         
@@ -59,11 +65,6 @@ class ResultsViewController: UIViewController {
         self.recommendButton.layer.shadowRadius = 3
         self.recommendButton.layer.shadowOpacity = 0.5
         
-        self.coverActivity.startAnimating()
-        self.checkReviewsButton.enabled = false
-        self.addToListButton.enabled = false
-        self.recommendButton.enabled = false
-        
         if book != nil {
             self.addToListButton.setTitle("Remove from Must Read List", forState: .Normal)
             self.bookTitle.text = book.title
@@ -82,6 +83,15 @@ class ResultsViewController: UIViewController {
                         let url = NSURL(string: result![2] as! String)
                         self.data = NSData(contentsOfURL: url!)
                         self.cover.image = UIImage(data: self.data!)
+                        
+                        self.coverActivity.stopAnimating()
+                        self.coverActivity.hidden = true
+                        self.checkReviewsButton.enabled = true
+                        self.addToListButton.enabled = true
+                        self.recommendButton.enabled = true
+                        self.checkReviewsButton.alpha = 1.0
+                        self.addToListButton.alpha = 1.0
+                        self.recommendButton.alpha = 1.0
                     }
                 }
                 else {
@@ -93,14 +103,6 @@ class ResultsViewController: UIViewController {
                 }
             }
         }
-        self.coverActivity.stopAnimating()
-        self.coverActivity.hidden = true
-        self.checkReviewsButton.enabled = true
-        self.addToListButton.enabled = true
-        self.recommendButton.enabled = true
-        self.checkReviewsButton.alpha = 1.0
-        self.addToListButton.alpha = 1.0
-        self.recommendButton.alpha = 1.0
     }
     
     @IBAction func loveBook() {
@@ -116,7 +118,7 @@ class ResultsViewController: UIViewController {
                 
                 if fetchResults!.count > 0 {
                 } else {
-                    let book = Book(title: self.bookTitle.text!, isbn: self.barcode!, authors: self.authors.text!, image: self.data!, context: self.stack.context)
+                    _ = Book(title: self.bookTitle.text!, isbn: self.barcode!, authors: self.authors.text!, image: self.data!, context: self.stack.context)
                     
                     print("added")
                     do{
@@ -158,7 +160,7 @@ class ResultsViewController: UIViewController {
     
     @IBAction func checkReviewsClicked() {
         
-        let url = "https://www.goodreads.com/api/reviews_widget_iframe?did=u1n5vmgviDEWGU4aa5nu6Q&amp;format=html&amp;isbn=" + self.barcode! + "&amp;links=660&amp;min_rating=&amp;review_back=fff&amp;stars=000&amp;text=000"
+        let url = GoodReadsConstants.Constants.urlPart1 + self.barcode! + GoodReadsConstants.Constants.urlPart2
         
         let svc = SFSafariViewController(URL: NSURL(string: url)!)
         if #available(iOS 10.0, *) {
@@ -168,10 +170,6 @@ class ResultsViewController: UIViewController {
         }
         
         self.presentViewController(svc, animated: true, completion: nil)
-        //self.presentViewController(svc, animated: true, completion: nil)
-        //let vc = self.storyboard!.instantiateViewControllerWithIdentifier("ReviewOptionsTableViewController") as! ReviewOptionsTableViewController
-        //vc.barcode = self.barcode
-        //self.navigationController!.pushViewController(vc, animated: true)
     }
     
     @IBAction func shareBook() {

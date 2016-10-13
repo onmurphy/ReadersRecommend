@@ -33,7 +33,6 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         captureSession = AVCaptureSession()
         
         do {
-            // get the default device and use auto settings
             captureDevice = AVCaptureDevice.defaultDeviceWithMediaType(AVMediaTypeVideo)
             try captureDevice.lockForConfiguration()
             captureDevice.exposureMode = AVCaptureExposureMode.ContinuousAutoExposure
@@ -44,14 +43,12 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
             }
             captureDevice.unlockForConfiguration()
             
-            // add the input/output devices
             captureSession.beginConfiguration()
             captureDeviceInput = try AVCaptureDeviceInput(device: captureDevice)
             if captureSession.canAddInput(captureDeviceInput) {
                 captureSession.addInput(captureDeviceInput)
             }
             
-            // AVCaptureMetadataOutput is how we can determine
             captureDeviceOutput = AVCaptureMetadataOutput()
             captureDeviceOutput.setMetadataObjectsDelegate(self, queue: dispatch_get_main_queue())
             if captureSession.canAddOutput(captureDeviceOutput) {

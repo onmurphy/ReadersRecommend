@@ -7,15 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		060C07E31DAEE8E600753181 /* GoogleConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C07E21DAEE8E600753181 /* GoogleConstants.swift */; };
+		060C07E51DAF2A8700753181 /* GoodReadsConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 060C07E41DAF2A8700753181 /* GoodReadsConstants.swift */; };
 		0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480A1D8CACF5005BF834 /* GoogleClient.swift */; };
-		0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */; };
-		065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248111D8F692F005BF834 /* CustomTableViewCell.swift */; };
 		065248141D8F7AD1005BF834 /* LoveTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248131D8F7AD1005BF834 /* LoveTableViewController.swift */; };
 		065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 065248161D8F88AF005BF834 /* Model.xcdatamodeld */; };
 		0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */; };
 		0652481C1D8F8B07005BF834 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481A1D8F8B07005BF834 /* Book.swift */; };
 		0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481D1D8F8B34005BF834 /* CoreDataStack.swift */; };
-		065248201D91F58A005BF834 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0652481F1D91F58A005BF834 /* LaunchViewController.swift */; };
 		06BB22891DAD98FF0005493E /* North.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06BB22881DAD98FF0005493E /* North.otf */; };
 		06BB228B1DADD4B00005493E /* GrandHotel-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 06BB228A1DADD4B00005493E /* GrandHotel-Regular.otf */; };
 		06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06BC79A01D8B939100B9D1FA /* AppDelegate.swift */; };
@@ -46,15 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		060C07E21DAEE8E600753181 /* GoogleConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleConstants.swift; sourceTree = "<group>"; };
+		060C07E41DAF2A8700753181 /* GoodReadsConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoodReadsConstants.swift; sourceTree = "<group>"; };
 		0652480A1D8CACF5005BF834 /* GoogleClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoogleClient.swift; sourceTree = "<group>"; };
-		0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewOptionsTableViewController.swift; sourceTree = "<group>"; };
-		065248111D8F692F005BF834 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		065248131D8F7AD1005BF834 /* LoveTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoveTableViewController.swift; sourceTree = "<group>"; };
 		065248171D8F88AF005BF834 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		065248191D8F8B07005BF834 /* Book+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Book+CoreDataProperties.swift"; path = "../Book+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0652481A1D8F8B07005BF834 /* Book.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Book.swift; path = ../Book.swift; sourceTree = "<group>"; };
 		0652481D1D8F8B34005BF834 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
-		0652481F1D91F58A005BF834 /* LaunchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		06BB22881DAD98FF0005493E /* North.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = North.otf; sourceTree = "<group>"; };
 		06BB228A1DADD4B00005493E /* GrandHotel-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GrandHotel-Regular.otf"; sourceTree = "<group>"; };
 		06BC799D1D8B939100B9D1FA /* ReadersRecommend.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ReadersRecommend.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -98,9 +96,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		060C07E61DAF2A8B00753181 /* GoodReads */ = {
+			isa = PBXGroup;
+			children = (
+				060C07E41DAF2A8700753181 /* GoodReadsConstants.swift */,
+			);
+			name = GoodReads;
+			sourceTree = "<group>";
+		};
 		065248081D8CACCC005BF834 /* Clients */ = {
 			isa = PBXGroup;
 			children = (
+				060C07E61DAF2A8B00753181 /* GoodReads */,
 				065248091D8CACD4005BF834 /* Google */,
 			);
 			name = Clients;
@@ -110,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				0652480A1D8CACF5005BF834 /* GoogleClient.swift */,
+				060C07E21DAEE8E600753181 /* GoogleConstants.swift */,
 			);
 			name = Google;
 			sourceTree = "<group>";
@@ -182,9 +190,7 @@
 			children = (
 				06BC79A21D8B939100B9D1FA /* ScannerViewController.swift */,
 				06BC79D31D8CA53800B9D1FA /* ResultsViewController.swift */,
-				0652480D1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift */,
 				065248131D8F7AD1005BF834 /* LoveTableViewController.swift */,
-				0652481F1D91F58A005BF834 /* LaunchViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -192,7 +198,6 @@
 		06BC79CF1D8B93A200B9D1FA /* View */ = {
 			isa = PBXGroup;
 			children = (
-				065248111D8F692F005BF834 /* CustomTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -346,18 +351,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				065248201D91F58A005BF834 /* LaunchViewController.swift in Sources */,
 				065248141D8F7AD1005BF834 /* LoveTableViewController.swift in Sources */,
 				06BC79A31D8B939100B9D1FA /* ScannerViewController.swift in Sources */,
 				0652480B1D8CACF5005BF834 /* GoogleClient.swift in Sources */,
+				060C07E51DAF2A8700753181 /* GoodReadsConstants.swift in Sources */,
 				0652481E1D8F8B34005BF834 /* CoreDataStack.swift in Sources */,
+				060C07E31DAEE8E600753181 /* GoogleConstants.swift in Sources */,
 				0652481C1D8F8B07005BF834 /* Book.swift in Sources */,
 				06BC79A11D8B939100B9D1FA /* AppDelegate.swift in Sources */,
-				065248121D8F692F005BF834 /* CustomTableViewCell.swift in Sources */,
 				065248181D8F88AF005BF834 /* Model.xcdatamodeld in Sources */,
 				06BC79D41D8CA53900B9D1FA /* ResultsViewController.swift in Sources */,
 				0652481B1D8F8B07005BF834 /* Book+CoreDataProperties.swift in Sources */,
-				0652480E1D8E0B35005BF834 /* ReviewOptionsTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
