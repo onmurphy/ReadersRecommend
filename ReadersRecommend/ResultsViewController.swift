@@ -72,6 +72,15 @@ class ResultsViewController: UIViewController {
             self.cover.image = UIImage(data: book.image!)
             self.data = book.image!
             self.barcode = book.isbn
+            self.coverActivity.stopAnimating()
+            self.coverActivity.hidden = true
+            self.checkReviewsButton.enabled = true
+            self.addToListButton.enabled = true
+            self.recommendButton.enabled = true
+            self.checkReviewsButton.alpha = 1.0
+            self.addToListButton.alpha = 1.0
+            self.recommendButton.alpha = 1.0
+
         } else {
             GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
                 if error == nil {

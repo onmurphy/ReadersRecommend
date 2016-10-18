@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "100"
-            endingLineNumber = "100"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "ScannerViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "captureOutput(_:didOutputMetadataObjects:fromConnection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "captureOutput(_:didOutputMetadataObjects:fromConnection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -122,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "127"
-            endingLineNumber = "127"
+            startingLineNumber = "113"
+            endingLineNumber = "113"
             landmarkName = "ScannerViewController"
             landmarkType = "3">
             <Locations>
@@ -170,11 +170,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ScannerViewController.swift"
-            timestampString = "498018825.187148"
+            timestampString = "498019681.632379"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "ScannerViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -282,11 +282,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ResultsViewController.swift"
-            timestampString = "498017849.250482"
+            timestampString = "498019724.221947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
             landmarkName = "loveBook()"
             landmarkType = "7">
          </BreakpointContent>
@@ -298,11 +298,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ResultsViewController.swift"
-            timestampString = "498017849.250482"
+            timestampString = "498019724.221947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "112"
-            endingLineNumber = "112"
+            startingLineNumber = "121"
+            endingLineNumber = "121"
             landmarkName = "loveBook()"
             landmarkType = "7">
          </BreakpointContent>
@@ -314,11 +314,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ReadersRecommend/ResultsViewController.swift"
-            timestampString = "498017849.250482"
+            timestampString = "498019724.221947"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "loveBook()"
             landmarkType = "7">
             <Locations>
