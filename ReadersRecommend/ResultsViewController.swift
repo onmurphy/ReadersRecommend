@@ -72,14 +72,7 @@ class ResultsViewController: UIViewController {
             self.cover.image = UIImage(data: book.image!)
             self.data = book.image!
             self.barcode = book.isbn
-            self.coverActivity.stopAnimating()
-            self.coverActivity.hidden = true
-            self.checkReviewsButton.enabled = true
-            self.addToListButton.enabled = true
-            self.recommendButton.enabled = true
-            self.checkReviewsButton.alpha = 1.0
-            self.addToListButton.alpha = 1.0
-            self.recommendButton.alpha = 1.0
+            self.enableControls()
 
         } else {
             GoogleClient.sharedInstance().getBookInfo(barcode!) { (result, error) in
@@ -93,18 +86,11 @@ class ResultsViewController: UIViewController {
                         self.data = NSData(contentsOfURL: url!)
                         self.cover.image = UIImage(data: self.data!)
                         
-                        self.coverActivity.stopAnimating()
-                        self.coverActivity.hidden = true
-                        self.checkReviewsButton.enabled = true
-                        self.addToListButton.enabled = true
-                        self.recommendButton.enabled = true
-                        self.checkReviewsButton.alpha = 1.0
-                        self.addToListButton.alpha = 1.0
-                        self.recommendButton.alpha = 1.0
+                        self.enableControls()
                     }
                 }
                 else {
-                    let alertController = UIAlertController(title: "Default Style", message: "Could not retrieve book info. Please check network connection, or try another book", preferredStyle: .Alert)
+                    let alertController = UIAlertController(title: "Scanning Error", message: "Could not retrieve book info. Please check network connection, or try another book", preferredStyle: .Alert)
                     
                     alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                     
@@ -190,5 +176,16 @@ class ResultsViewController: UIViewController {
         let activityViewController = UIActivityViewController(activityItems: shareContent, applicationActivities: nil)
         activityViewController.excludedActivityTypes = [UIActivityTypePostToTwitter, UIActivityTypeAssignToContact, UIActivityTypeOpenInIBooks, UIActivityTypeSaveToCameraRoll, UIActivityTypeAssignToContact, UIActivityTypeCopyToPasteboard, UIActivityTypePrint]
         presentViewController(activityViewController, animated: true, completion: {})
+    }
+    
+    func enableControls() {
+        self.coverActivity.stopAnimating()
+        self.coverActivity.hidden = true
+        self.checkReviewsButton.enabled = true
+        self.addToListButton.enabled = true
+        self.recommendButton.enabled = true
+        self.checkReviewsButton.alpha = 1.0
+        self.addToListButton.alpha = 1.0
+        self.recommendButton.alpha = 1.0
     }
 }

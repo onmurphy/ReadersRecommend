@@ -27,6 +27,14 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        #if (arch(i386) || arch(x86_64))
+        let alertController = UIAlertController(title: "Camera Error", message: "Camera functionality is not available on simulator. Please run on a device.", preferredStyle: .Alert)
+            
+        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            
+        self.presentViewController(alertController, animated: true, completion: nil)
+            
+        #else
         let image = UIImage(named: "logo")
         navigationItem.titleView = UIImageView(image: image)
         
@@ -65,6 +73,7 @@ class ScannerViewController: UIViewController, AVCaptureMetadataOutputObjectsDel
         capturePreviewLayer.frame = self.view.layer.bounds
         capturePreviewLayer.videoGravity = AVLayerVideoGravityResizeAspectFill
         self.view.layer.addSublayer(capturePreviewLayer)
+        #endif
     }
     
     func failed() {
