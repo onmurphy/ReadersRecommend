@@ -85,17 +85,21 @@ class ResultsViewController: UIViewController {
                         let url = NSURL(string: result![2] as! String)
                         self.data = NSData(contentsOfURL: url!)
                         self.cover.image = UIImage(data: self.data!)
-                        
                         self.enableControls()
                     }
                 }
                 else {
-                    let alertController = UIAlertController(title: "Scanning Error", message: "Could not retrieve book info. Please check network connection, or try another book", preferredStyle: .Alert)
-                    
-                    alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-                    
-                    self.presentViewController(alertController, animated: true, completion: nil)
+                    dispatch_async(dispatch_get_main_queue()) {
+                        let alertController = UIAlertController(title: "Scanning Error", message: "Could not retrieve book info. Please check network connection, or try another book", preferredStyle: .Alert)
+                        
+                        alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                        
+                        self.enableControls()
+                    }
                 }
+                
             }
         }
     }

@@ -43,7 +43,8 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
     
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
-        shouldShowSearchResults = false
+        self.activityIndicator.stopAnimating()
+        self.overlayView.removeFromSuperview()
         searchTableView.reloadData()
     }
     
@@ -58,6 +59,17 @@ class SearchViewController: UITableViewController, UISearchBarDelegate {
                 self.results = result!
                 print(self.results)
                 self.animateTable()
+            } else {
+                dispatch_async(dispatch_get_main_queue()) {
+                    self.activityIndicator.stopAnimating()
+                    self.overlayView.removeFromSuperview()
+                    
+                    let alertController = UIAlertController(title: "Search Error", message: "Could not complete search. Please check network connection.", preferredStyle: .Alert)
+                    
+                    alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                    
+                    self.presentViewController(alertController, animated: true, completion: nil)
+                }
             }
         }
         
